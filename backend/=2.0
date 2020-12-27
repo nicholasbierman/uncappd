@@ -1,0 +1,12 @@
+
+> libpq@1.8.9 install /Users/nick/Desktop/app-academy/authenticate-me-sequelize-5/backend/node_modules/libpq
+> node-gyp rebuild
+
+  CXX(target) Release/obj.target/addon/src/connection.o
+  CXX(target) Release/obj.target/addon/src/connect-async-worker.o
+  CXX(target) Release/obj.target/addon/src/addon.o
+  SOLINK_MODULE(target) Release/addon.node
++ pg-native@3.0.0
+added 11 packages from 12 contributors and audited 331 packages in 11.768s
+found 4 low severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
