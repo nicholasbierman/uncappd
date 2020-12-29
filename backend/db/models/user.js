@@ -1,11 +1,18 @@
 'use strict';
 const { Validator } = require('sequelize');
 const bcrypt = require('bcryptjs');
+const { Sequelize } = require('.');
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     'User',
     {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
       username: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -22,7 +29,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [3, 256]
+          len: [3, 256],
+          isEmail(value) {
+            if (!Validator.isEmail(value)) {
+              throw new Error('Please enter a valid email address');
+            }
+          }
         }
       },
       hashedPassword: {
@@ -51,11 +63,12 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     // associations can be defined here
+    User.hasMany(Checkin, {foreignKey: 'user_id'})
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
     const { id, username, email } = this; // context will be the User instance
-    return { id, username, email };
+    return { id, username, email }; // return an object with the User instance info that's safe to save to a JWT
   };
 
   User.prototype.validatePassword = function (password) {

@@ -12,9 +12,13 @@ const isProduction = environment === 'production';
 
 const app = express();
 
+// Middleware for logging info about requests / responses
 app.use(morgan('dev'));
 
+// Middleware for parsing cookies
 app.use(cookieParser());
+// Middleware for parsing JSON request bodies with 
+// "Content-Type": "application/json"
 app.use(express.json());
 
 // Security Middleware
