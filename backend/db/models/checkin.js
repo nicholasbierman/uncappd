@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    brewery_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     review: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -51,8 +55,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Checkin.associate = function(models) {
     // associations can be defined here
-    //Checkin.hasOne(Beer, {foreignKey: 'beer_id'});
-    //Checkin.hasOne(Brewery, {foreignKey: 'purchased_location'})
   };
   return Checkin;
 };
