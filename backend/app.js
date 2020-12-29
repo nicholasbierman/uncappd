@@ -5,6 +5,8 @@ const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { ValidationError } = require('sequelize');
+const bodyParser = require("body-parser");
+
 
 const routes = require('./routes');
 const { environment } = require('./config');
@@ -19,7 +21,8 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 // Middleware for parsing JSON request bodies with 
 // "Content-Type": "application/json"
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Security Middleware
 if (!isProduction) {
