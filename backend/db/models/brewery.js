@@ -5,7 +5,7 @@ const { Sequelize } = require(".");
 module.exports = (sequelize, DataTypes) => {
   const Brewery = sequelize.define('Brewery', {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,

@@ -6,6 +6,8 @@ const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, restoreUser } = require("../../utils/auth");
 const { User } = require("../../db/models");
 
+const {singleMulterUpload} = require('../../awsS3');
+
 const router = express.Router();
 
 const validateLogin = [
@@ -22,6 +24,7 @@ const validateLogin = [
 // Log in
 router.post(
   '/',
+  singleMulterUpload('image'),
   validateLogin,
   asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;

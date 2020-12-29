@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER,
       },
       username: {
         type: DataTypes.STRING,
@@ -66,7 +66,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     // associations can be defined here
-    User.hasMany(Checkin, {foreignKey: 'user_id'})
+    User.hasMany(models.Checkin, {foreignKey: 'user_id'})
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
@@ -97,12 +97,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
 
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async function ({ profileImageUrl, username, email, password }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
       email,
-      hashedPassword
+      hashedPassword,
+      profileImageUrl,
     });
     return await User.scope('currentUser').findByPk(user.id);
   };

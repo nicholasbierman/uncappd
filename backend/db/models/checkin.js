@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Checkin = sequelize.define('Checkin', {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
@@ -51,8 +51,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Checkin.associate = function(models) {
     // associations can be defined here
-    Checkin.hasOne(Beer, {foreignKey: 'beer_id'});
-    Checkin.hasOne(Brewery, {foreignKey: 'purchased_location'})
+    //Checkin.hasOne(Beer, {foreignKey: 'beer_id'});
+    //Checkin.hasOne(Brewery, {foreignKey: 'purchased_location'})
   };
   return Checkin;
 };
