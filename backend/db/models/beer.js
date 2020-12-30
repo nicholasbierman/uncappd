@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Beer.associate = function(models) {
     // associations can be defined here
-    //Beer.belongsTo(models.Checkin, { foreignKey: 'beer_id' });
+   Beer.hasMany(models.Checkin, { foreignKey: 'beer_id' });
     Beer.hasOne(models.Beer_Type, { foreignKey: 'beer_type_description' });
   };
   return Beer;
