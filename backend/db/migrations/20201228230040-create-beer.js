@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      brewery_name: {
+      brewery_id: {
         type: Sequelize.STRING,
         allowNull: false,
       },
