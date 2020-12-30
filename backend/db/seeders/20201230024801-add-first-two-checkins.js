@@ -35,9 +35,7 @@ module.exports = {
 
       Example:
       */
-    await queryInterface.bulkDelete('People', {user_id: { [Sequelize.Op.in]: [1, 2]}
-        
-      });
+    await queryInterface.bulkDelete('Checkins', {user_id: { [Sequelize.Op.in]: [1, 2]}});
   }
 };
 
