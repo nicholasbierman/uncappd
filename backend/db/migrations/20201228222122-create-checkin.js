@@ -22,10 +22,10 @@ module.exports = {
       },
       photo_url: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       rating: {
-        type: Sequelize.NUMERIC,
+        type: Sequelize.NUMERIC(3, 2),
         allowNull: false,
       },
       serving_style: {
@@ -38,11 +38,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       }
     });
   },

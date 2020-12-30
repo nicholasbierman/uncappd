@@ -20,6 +20,21 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      brewery_state: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      brewery_description: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
+      brewery_type: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+          isIn: [['macro', 'micro', 'nano', 'pub', 'cidery', 'meadery', 'cidery', 'contract', 'regional']]
+        }
+      },
       rating_count: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -34,21 +49,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
-      },
-      brewery_state: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      brewery_description: {
-        type: Sequelize.TEXT,
-        allowNull: true,
-      },
-      brewery_type: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-          isIn: [ [ 'macro', 'micro', 'nano', 'pub', 'cidery', 'meadery', 'cidery', 'contract', 'regional' ] ]
-        }
       },
       brewery_logo_url: {
         type: Sequelize.STRING,

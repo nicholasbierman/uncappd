@@ -1,4 +1,4 @@
-const express = require('express');
+const router = require('express').Router();
 const { check } = require('express-validator');
 const asyncHandler = require('express-async-handler');
 
@@ -7,8 +7,6 @@ const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User } = require('../../db/models');
 
 const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
-
-const router = express.Router();
 
 const validateSignup = [
   check('email')

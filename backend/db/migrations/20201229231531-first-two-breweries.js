@@ -19,7 +19,7 @@ module.exports = {
       brewery_city: {
         type: Sequelize.STRING,
         allowNull: false,
-      },
+        },
       rating_count: {
         type: Sequelize.INTEGER,
         allowNull: false,

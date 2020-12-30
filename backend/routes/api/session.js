@@ -1,4 +1,4 @@
-const express = require("express");
+const router = require("express").Router();
 const { check } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 
@@ -6,9 +6,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, restoreUser } = require("../../utils/auth");
 const { User } = require("../../db/models");
 
-const {singleMulterUpload} = require('../../awsS3');
-
-const router = express.Router();
+const { singleMulterUpload } = require('../../awsS3');
 
 const validateLogin = [
   check("credential")

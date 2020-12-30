@@ -10,11 +10,11 @@ module.exports = {
       */
     await queryInterface.bulkInsert('Beer_Types', [
       {
-        name: 'Stout - Imperial / Double',
+        beer_type_name: 'Stout - Imperial / Double',
         beer_type_description: 'The imperial stout is the strongest in alcohol and body of the stouts. Black in color, these beers typically have an extremely rich malty flavor and aroma with full, sweet malt character. Bitterness can come from roasted malts or hop additions',
       },
       {
-        name: 'Winter Ale',
+        beer_type_name: 'Winter Ale',
         beer_type_description: 'A stronger, darker, spiced beer that often has a rich body and warming finish suggesting a good accompaniment for the cold winter season.',
       }
       ], {});
@@ -26,7 +26,7 @@ module.exports = {
     
     Example:
     */
-    await queryInterface.bulkDelete('Beer_Types', {name: { [Sequelize.Op.in]: ['Stout - Imperial / Double', 'Winter Ale']}});
+    await queryInterface.bulkDelete('Beer_Types', {beer_type_name: { [Sequelize.Op.in]: ['Stout - Imperial / Double', 'Winter Ale']}});
   }
 };
 //  id: {

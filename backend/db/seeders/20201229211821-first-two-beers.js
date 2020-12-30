@@ -10,7 +10,7 @@ module.exports = {
       */
     await queryInterface.bulkInsert('Beers', [
       {
-        name: 'Bud Light',
+        beer_name: 'Bud Light',
         abv: 5.2,
         ibu: 45,
         brewery_id: 1,
@@ -18,7 +18,7 @@ module.exports = {
         beer_description: 'This is a description of Bud Light',
       },
       {
-        name: 'Natural Light',
+        beer_name: 'Natural Light',
         abv: 5.2,
         ibu: 45,
         brewery_id: 1,
@@ -35,7 +35,7 @@ module.exports = {
       Example:
       */
     await queryInterface.bulkDelete('Beers', {
-        name: { [Sequelize.Op.in]: ["Bud Light", "Natural Light"]}
+        beer_name: { [Sequelize.Op.in]: ["Bud Light", "Natural Light"]}
       });
   }
 };
