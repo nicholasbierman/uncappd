@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true,
     },
-    name: {
+    beer_name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Beer.associate = function(models) {
     // associations can be defined here
-    Beer.belongsTo(models.Checkin, { foreignKey: 'beer_id' });
+    //Beer.belongsTo(models.Checkin, { foreignKey: 'beer_id' });
     Beer.hasOne(models.Beer_Type, { foreignKey: 'beer_type_description' });
   };
   return Beer;
