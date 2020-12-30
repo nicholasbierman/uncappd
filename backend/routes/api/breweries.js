@@ -12,8 +12,11 @@ router.get('/', async (req, res) => {
 // GET /api/breweries/:id
 router.get('/:id', async (req, res) => {
     const brewery = await Brewery.findOne({
-        where: {}
-    })
+        where: {
+            brewery_id: `${req.params.id}`,
+        }
+    });
+    res.json({ brewery });
 })
 
 module.exports = router;
