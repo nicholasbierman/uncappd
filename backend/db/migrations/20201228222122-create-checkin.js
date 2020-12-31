@@ -16,10 +16,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      brewery_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
       review: {
         type: Sequelize.STRING,
         allowNull: false,

@@ -15,10 +15,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    brewery_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     review: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -56,7 +52,6 @@ module.exports = (sequelize, DataTypes) => {
   Checkin.associate = function(models) {
     // associations can be defined here
     Checkin.belongsTo(models.Beer, { foreignKey: 'beer_id' });
-    //Checkin.belongsTo(models.Brewery, { foreignKey: 'brewery_id' });
   };
   return Checkin;
 };

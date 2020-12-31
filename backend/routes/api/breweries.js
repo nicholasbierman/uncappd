@@ -1,11 +1,10 @@
 const router = require('express').Router();
 
-const { Brewery } = require('../../db/models');
+const { Brewery, Beer, Checkin } = require('../../db/models');
 
 // GET /api/breweries/
 router.get('/', async (req, res) => {
     const breweries = await Brewery.findAll();
-    console.log(breweries);
     res.json({ breweries: breweries });
 })
 
@@ -13,8 +12,13 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const brewery = await Brewery.findOne({
         where: {
-            brewery_id: `${req.params.id}`,
-        }
+            id: `${req.params.id}`,
+        },
+        include: {
+            model: Beer,
+            include: {
+                model: Checkin
+            }}
     });
     res.json({ brewery });
 })

@@ -1,22 +1,22 @@
 const router = require('express').Router();
 
-const { Beer, Checkin } = require('../../db/models');
+const { Beer, Brewery, Checkin } = require('../../db/models');
 
 // GET /api/beers/
 router.get('/', async (req, res) => {
     const beers = await Beer.findAll({
-        include: {model: Checkin},
+        include: { model: Checkin },
     });
-    console.log(beers);
     res.json({ beers: beers });
 })
 
-// GET /api/breweries/:id
+// GET /api/beers/:id
 router.get('/:id', async (req, res) => {
     const beer = await Beer.findOne({
         where: {
             id: `${req.params.id}`,
-        }
+        },
+        include: { model: Checkin }
     });
     res.json({ beer });
 })
