@@ -42,7 +42,7 @@ export const signup = (user) => async (dispatch) => {
   });
 
   dispatch(setUser(response.data.user));
-  //return response;
+  return response;
 };
 
 export const logout = () => async (dispatch) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -27,6 +27,15 @@ function Navigation({ isLoaded }){
       <li>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
+      </li>
+      <li>
+        <NavLink to="/breweries">Top Rated</NavLink>
+      </li>
+      <li>
+        <NavLink to="/supporter">Supporter</NavLink>
+      </li>
+      <li>
+        <NavLink to="/help">Help</NavLink>
       </li>
     </ul>
   );
