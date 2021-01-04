@@ -11,8 +11,8 @@ export const fetchAllBreweries = () => {
     return async (dispatch) => {
         const response = await fetch('/api/breweries');
         dispatch(setBreweries(response.data.breweries));
-    }
-}
+    };
+};
 
 
 const initialState = [];

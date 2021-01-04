@@ -20,6 +20,16 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      rating_count: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
+      rating_score: {
+        type: Sequelize.NUMERIC(3, 2),
+        allowNull: false,
+        defaultValue: 0.00,
+      },
       brewery_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -29,7 +39,7 @@ module.exports = {
         allowNull: false,
       },
       beer_description: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       createdAt: {

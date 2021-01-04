@@ -1,0 +1,30 @@
+h3 {
+    border-bottom: 1px solid white;
+}
+
+.content {
+    width: 700px;
+    position: relative;
+    padding: 24px 24px 24px 24px;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.orange-link {
+    color: rgb(255, 168, 61);
+}
+
+.checkin-review-body {
+    height: fit-content;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+button {
+    margin-right: 100px;
+    width: 30%;
+}
+
+a:hover {
+    cursor: pointer;
+}

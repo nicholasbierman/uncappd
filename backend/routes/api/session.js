@@ -22,11 +22,11 @@ const validateLogin = [
 // Log in
 router.post(
   '/',
-  singleMulterUpload('image'),
-  validateLogin,
+  //singleMulterUpload('image'),
+  //validateLogin,
   asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
-
+    console.log(credential, password);
     const user = await User.login({ credential, password });
 
     if (!user) {

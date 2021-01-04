@@ -43,7 +43,7 @@ module.exports = {
       rating_score: {
         type: Sequelize.NUMERIC(3, 2),
         allowNull: false,
-        defaultValue: 0,
+        defaultValue: 0.00,
       },
       beer_count: {
         type: Sequelize.INTEGER,

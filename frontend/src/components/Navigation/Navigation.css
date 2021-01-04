@@ -1,3 +1,19 @@
 .profile-dropdown {
   position: absolute;
 }
+
+ul {
+  background-color: gold;
+}
+ul > li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.navbar-link-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  list-style: none;
+}

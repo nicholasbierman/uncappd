@@ -12,12 +12,14 @@ module.exports = {
         brewery_name: 'Sixpoint Brewery',
         brewery_country: 'United States',
         brewery_city: 'Brooklyn',
+        num_beers: 132,
         brewery_state: 'NY',
         brewery_type: 'macro',
         brewery_description: 'Located in Brooklyn, NY, Sixpoint is a great place to kick back and relax with friends',
       },
       {
         brewery_name: 'Pips Meadery',
+        num_beers: 249,
         brewery_country: 'United States',
         brewery_city: 'Beach Park',
         brewery_state: 'IL',
@@ -26,6 +28,7 @@ module.exports = {
       },
       {
         brewery_name: 'Smooj',
+        num_beers: 213,
         brewery_country: 'United States',
         brewery_city: 'Ann Arbor',
         brewery_state: 'MI',

@@ -20,6 +20,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    rating_count: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    rating_score: {
+      type: DataTypes.NUMERIC(3, 2),
+      allowNull: false,
+      defaultValue: 0.00
+    },
     brewery_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -29,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     beer_description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     }
   }, {});

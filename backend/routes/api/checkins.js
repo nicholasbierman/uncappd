@@ -1,14 +1,19 @@
 const router = require('express').Router();
-const { Checkin, Beer, Brewery } = require('../../db/models');
+const { User,Checkin, Beer, Brewery } = require('../../db/models');
 
 // GET /api/checkins/:id
 router.get('/:id', async (req, res) => {
-    const userCheckins = await Checkin.findAll({
-        where: {
-            user_id: `${req.params.id}`
+    const userCheckins = await User.findAll({
+        include: {
+            model: Checkin,
+            where: {
+                user_id: `${req.params.id}`
+            },
+            include: [ Beer ],
+            required: true,
         }
     });
-    res.json({ checkins: userCheckins });
+    res.json({ userCheckins });
 });
 
 router.get('/brewery/:id', async (req, res) => {
@@ -27,6 +32,7 @@ router.get('/brewery/:id', async (req, res) => {
     res.json({ breweryCheckins });
 })
 
+// POST /checkins/add
 router.post('/add', async (req, res) => {
     const {
         user_id,

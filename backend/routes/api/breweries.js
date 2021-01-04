@@ -4,7 +4,9 @@ const { Brewery, Beer, Checkin } = require('../../db/models');
 
 // GET /api/breweries/
 router.get('/', async (req, res) => {
-    const breweries = await Brewery.findAll();
+    const breweries = await Brewery.findAll({
+        order: [['rating_score', 'DESC']]
+    });
     res.json({ breweries: breweries });
 })
 

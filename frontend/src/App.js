@@ -7,6 +7,7 @@ import BreweriesPage from './components/BreweriesPage';
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
+import CheckinsPage from "./components/CheckinsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/beers">
             <BeersPage />
+          </Route>
+          <Route path="/home">
+            <CheckinsPage />
           </Route>
         </Switch>
       )}
