@@ -29,7 +29,13 @@ function Navigation({ isLoaded }){
         {isLoaded && sessionLinks}
       </li>
       {sessionUser && 
-      <div class="navbar-link-container">
+        <div class="navbar-link-container">
+        <li class="navbar-text">
+          <NavLink to="/checkin">Check In</NavLink>
+        </li>
+        <li class="navbar-text">
+          <NavLink to="/beers">Beers</NavLink>
+        </li>
       <li class="navbar-text">
         <NavLink to="/breweries">Breweries</NavLink>
       </li>

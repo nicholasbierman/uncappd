@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+#beers-page {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content-explainer {
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.beer-list-container {
+    width: 100%;
+    padding: 0 24px 24px 24px;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.beer-list-item {
+    display: flex;
+    margin-top: 10px;
+    height: fit-content;
+    width: 90%;
+}
+
+.beer-list-item-info {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+/* .beer-list-item-stats {
+    border-top-color: rgb(54, 59, 61);
+    align-self: baseline;
+    display: flex;
+    margin: 10px 0 0 0;
+    border-top: 1px solid #e9e9e9;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 25%;
+    position: relative;
+    top: 100px;
+    right: 0;
+} */
+
+.abv, .ibu {
+    color: rgb(168, 160, 149);
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+}
