@@ -8,6 +8,11 @@ const setCheckins = (checkins) => ({
     payload: checkins
 });
 
+const addCheckin = (checkin) => ({
+    type: ADD_CHECKIN,
+    payload: checkin,
+})
+
 export const fetchAllCheckinsForUser = (id) => {
     return async (dispatch) => {
         const response = await fetch(`/api/checkins/${id}`);
@@ -15,9 +20,13 @@ export const fetchAllCheckinsForUser = (id) => {
     };
 };
 
-export const addCheckin = () => {
+export const addCheckinForUser = (newCheckin) => {
     return async (dispatch) => {
-        const response = await fetch(`/api/checkins`)
+        const response = await fetch(`/api/checkins/add`, {
+            method: "POST",
+            body: newCheckin,
+        })
+        dispatch(addCheckin(response.body.newCheckin));
     }
 }
 
@@ -28,6 +37,9 @@ export default function checkinsReducer (state = initialState, action) {
     switch (action.type) {
         case SET_ALL_CHECKINS:
             newState = Object.assign({}, state, { checkins: action.payload });
+            return newState;
+        case ADD_CHECKIN:
+            newState = Object.assign({}, state, { checkins: action.payload.newCheckin });
             return newState;
         default:
             return state;

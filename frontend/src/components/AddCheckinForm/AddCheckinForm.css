@@ -1,0 +1,38 @@
+#addCheckinForm-page {
+    margin: 0 auto;
+    position: relative;
+    vertical-align: baseline;
+    width: 100%;
+    display: flex;
+    align-content: center;
+}
+
+
+.form-container {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    vertical-align: baseline;
+    top: 50px;
+}
+
+label {
+    width: 60%;
+    padding-right: 10px;
+    color: orange;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 90%;
+    margin-bottom: 20px;
+}
