@@ -3,11 +3,16 @@ h3 {
 }
 
 .content {
-    width: 700px;
+    width: 70%;
     position: relative;
     padding: 24px 24px 24px 24px;
     font-size: 18px;
     margin: 0 auto;
+}
+
+.checkin-item {
+    width: 80%;
+    margin-top: 15px;
 }
 
 .orange-link {
@@ -16,13 +21,15 @@ h3 {
 
 .checkin-review-body {
     height: fit-content;
+    padding: 15px;
     border: 1px solid white;
     border-radius: 4px;
+    width: 68%;
 }
 
 button {
     margin-right: 100px;
-    width: 30%;
+    width: 25%;
 }
 
 a:hover {

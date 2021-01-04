@@ -15,10 +15,10 @@ const CheckinsPage = () => {
 
     return (
         <div class="content" id="checkins-page">
-            <h3>Your Recent Activity</h3>
+            <h3>Recent Global Activity</h3>
             {currentCheckins && currentCheckins.map((checkin, i) => 
-                <div>
-                    <p><a class="orange-link">{ checkin.firstName } { checkin.lastName }</a> is drinking a <a class="orange-link">{ checkin.Checkins[ i ].Beer.beer_name }</a> at <a class="orange-link">{ checkin.Checkins[ i ].purchased_location }</a></p>
+                <div class="checkin-item">
+                    <p><a class="orange-link">{ checkin.firstName } { checkin.lastName[0] }</a> is drinking a <a class="orange-link">{ checkin.Checkins[ i ].Beer.beer_name }</a> at <a class="orange-link">{ checkin.Checkins[ i ].purchased_location }</a></p>
                     <p class="checkin-review-body">{ checkin.Checkins[ i ].review }</p>
                     <button class="btn btn-secondary btn-lg"><i class="fas fa-comment"></i>Comment</button><button class="btn btn-secondary btn-lg"><i class="fas fa-beer"></i>Toast</button>
                 </div>

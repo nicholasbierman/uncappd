@@ -24,28 +24,28 @@ function Navigation({ isLoaded }){
 
   return (
     <ul class="navbar sticky-top">
-      <li class="navbar-text">
-        <NavLink exact to="/home">Home</NavLink>
+      <li class="nav-item">
+        <NavLink className="nav-link" exact to="/home">Uncappd</NavLink>
         {isLoaded && sessionLinks}
       </li>
       {sessionUser && 
-        <div class="navbar-link-container">
-        <li class="navbar-text">
-          <NavLink to="/checkin">Check In</NavLink>
+      <div class="navbar-link-container">
+        <li class="nav-item">
+          <NavLink className="nav-link" to="/checkin">Check In</NavLink>
         </li>
-        <li class="navbar-text">
-          <NavLink to="/beers">Beers</NavLink>
+        <li class="nav-item">
+          <NavLink className="nav-link" to="/beers">Beers</NavLink>
         </li>
-      <li class="navbar-text">
-        <NavLink to="/breweries">Breweries</NavLink>
+      <li class="nav-item">
+        <NavLink className="nav-link" to="/breweries">Breweries</NavLink>
       </li>
-      <li class="navbar-text">
-        <NavLink to="/supporter">Supporter</NavLink>
+      <li class="nav-item">
+        <NavLink id="supporter" classname="nav-link" to="/supporter">Supporter</NavLink>
       </li>
-      <li class="navbar-text">
-        <NavLink to="/help">Help</NavLink>
+      <li class="nav-item">
+        <NavLink className="nav-link" to="/help">Help</NavLink>
         </li>
-        </div>
+      </div>
       }
       </ul>
   );
